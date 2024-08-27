@@ -15,30 +15,14 @@ env:
     libhashcat*
 
 on:
-  push:
+  push:  # 对任何分支的任何推送事件触发
     branches:
-      - master
+      - '**'
     tags:
-      - v*
-    paths:
-      - 'OpenCL/**.h'
-      - 'OpenCL/**.cl'
-      - 'include/**.h'
-      - 'src/**.c'
-      - 'tools/**'
-      - '**/Makefile'
-      - '.github/workflows/build.yml'
-  pull_request:
+      - '**'
+  pull_request:  # 对任何分支的任何拉取请求事件触发
     branches:
-      - master
-    paths:
-      - 'OpenCL/**.h'
-      - 'OpenCL/**.cl'
-      - 'include/**.h'
-      - 'src/**.c'
-      - 'tools/**'
-      - '**/Makefile'
-      - '.github/workflows/build.yml'
+      - '**'
 
 jobs:
   build-linux:
